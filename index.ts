@@ -25,10 +25,19 @@ class Kickback implements Extension {
         this.config = Config;
     }
 
+    /**
+     * Reloads the config directly from the filesystem (specifically bypassing require's cache)
+     * @param require The require function (usually the one from nodejs) that loads javascript files
+     */
     reload(require): void {
         this.config = requireNoCache('./extensions/kickback/config.js', require);
     }
 
+    /**
+     * Switches users from their current Dimension to the fallback dimension if they were kicked/disconnected
+     * @param server The TerrariaServer that is tied to the client that is being disconnected
+     * @return Whether or not the client was sent to the fallback dimension
+     */
     serverDisconnectPreHandler(server: TerrariaServer): boolean {
         let handled = false;
 
@@ -41,6 +50,7 @@ class Kickback implements Extension {
             server.client.wasKicked = false;
             handled = true;
         }
+        
         return handled;
     }
 }
