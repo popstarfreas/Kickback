@@ -6,7 +6,7 @@ import PacketReader from 'dimensions/packets/packetreader';
 import Client from 'dimensions/client';
 import {Extension, ServerDisconnectHandler} from 'dimensions/extension';
 import {Config, ConfigSettings} from './configloader';
-import Utils from 'dimensions/utils';
+import {requireNoCache} from 'dimensions/utils';
 
 class Kickback implements Extension {
     name: string;
@@ -26,7 +26,7 @@ class Kickback implements Extension {
     }
 
     reload(require): void {
-        this.config = Utils.requireNoCache('./extensions/kickback/config.js', require);
+        this.config = requireNoCache('./extensions/kickback/config.js', require);
     }
 
     serverDisconnectPreHandler(server: TerrariaServer): boolean {
