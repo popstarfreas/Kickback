@@ -7,4 +7,4 @@ export interface ConfigSettings {
 }
 
 
-export const Config: ConfigSettings = require(`../translator-config.js`);
+export const Config: ConfigSettings = require(`./config.js`);
