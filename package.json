@@ -4,7 +4,6 @@
   "description": "Kicks users back to the specified dimension when kicked or disconnected",
   "main": "index.js",
   "dependencies": {
-    "lodash": "^4.17.4"
   },
   "devDependencies": {
     "@types/jasmine": "^2.5.43",
