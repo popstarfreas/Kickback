@@ -42,7 +42,7 @@ class Kickback implements Extension {
         let handled = false;
 
         // Only switch if not already in the fallback Dimension
-        if (this.config.enabled && server.name !== this.config.dimensionKickbackName) {
+        if (this.config.enabled && server.name !== this.config.dimensionKickbackName && server.afterClosed == null) {
             if (this.config.kickbackMessageEnabled) {
                 server.client.sendChatMessage(this.config.kickbackMessage, this.config.kickbackColor);
             }
