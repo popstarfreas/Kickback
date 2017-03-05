@@ -1,10 +1,9 @@
 {
   "name": "kickback",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Kicks users back to the specified dimension when kicked or disconnected",
   "main": "index.js",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@types/jasmine": "^2.5.43",
     "grunt": "^1.0.1",
